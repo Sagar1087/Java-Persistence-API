@@ -1,0 +1,22 @@
+                    JPA Configuration
+
+1. JPA configuration file should be at particular location.
+   Main -> Resources -> META-INF -> persistence.xml
+2. Write configuration xml in persistence.xml file
+3. Set unique Persistence unit name. This will be used to specify the connection.
+4. Provide configuration tags, <properties>. Provide SQL server JDBC driver, username, pwd to configure.
+
+5. @Entity : Employee is entity class. So annotation is needed for employee class to cosider as an entity.
+    @Id : required as each table should have a unique ID.
+
+6. <property name="hibernate.hbm2ddl.auto" value="create-drop"></property>
+    Create-drop : create table and drop before closing the entityManager.
+    validate : create if not available. Update table if already exist.
+
+*************************************************************************************************
+
+*********************************** Runner Class ********************************************
+1. Create -- EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("jpa-example");
+2. EntityManagerFactory :  is required for database connection.
+    Persistence.createEntityManagerFactory : Required to create entity.
+    "jpa-example" : Argument is Persistence unit name mentioned in xml file.

@@ -8,5 +8,35 @@
     <artifactId>Java-Persistence-API</artifactId>
     <version>1.0.0</version>
 
+    <dependencies>
+            <!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
+        <dependency>
+             <groupId>org.hibernate.orm</groupId>
+             <artifactId>hibernate-core</artifactId>
+             <version>6.0.0.Alpha4</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>8.2.0.jre13</version>
+        </dependency>
+
+
+
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.19</version>
+        </dependency>
+
+    </dependencies>
+
+    <properties>
+        <maven.compiler.release>11</maven.compiler.release>
+    </properties>
 
 </project>
+
+
