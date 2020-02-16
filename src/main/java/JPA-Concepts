@@ -31,5 +31,20 @@
 7.  entityManager.getTransaction().begin();
     entityManager.getTransaction().commit(); --> Wrap entityManager.persist(obj) with transcation begin and commit.
                                                  Statements required for every write operations in database. Option for read operation.
+*************************************************************************************************
+
+***********************************   Relational Schema  ********************************************
+1. Create two tables User and Address.
+2. @OneToOne
+    Private Address address : This creates One to One relationship in user class. User Table will have AddressID (FK).
+
+    --> Need to persist address object first [entityManager.Persist(address)] as it will be mapped with User table as Fk.
+
+3. @OneToMany : Joining table created with UseID & AddressID(PK) in User table. [May AddressIDs -> unique for one userID so AddressID PK]
+
+4. @ManyToMany : Joining table created. UID and AddID. No PK.
+
+5. @ManyToOne : No need of Joining table. UID (PK) and AddID(FK). Many UID has same AddID. Many users has one company address.
+
 
 
