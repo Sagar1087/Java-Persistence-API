@@ -1,17 +1,24 @@
 package JPA;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "Employee.FindAll", query = "select emp from Employee emp ORDER BY emp.email DESC"),
+        @NamedQuery(name = "Employee.FindByEmail", query = "SELECT emp from Employee emp where emp.email=:paramEmail")
+}
+)
 public class Employee {
 
     @Id
+    @Column(columnDefinition = "VARCHAR(36)")
     private String id;
 
     private String firstName;
     private String lastName;
+
+    @Column(unique = true)
     private String email;
 
     public Employee(){
@@ -48,5 +55,15 @@ public class Employee {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id='" + id + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

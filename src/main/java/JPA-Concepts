@@ -20,3 +20,16 @@
 2. EntityManagerFactory :  is required for database connection.
     Persistence.createEntityManagerFactory : Required to create entity.
     "jpa-example" : Argument is Persistence unit name mentioned in xml file.
+
+3.  @Column(columnDefinition = "VARCHAR(36)") : Define specific datatype and size.
+4. @Column(unique = true) : Specify unique key/ column. Ex. Email designated as unique key.
+
+5. EntityManager entityManager = entityManagerFactory.createEntityManager() : Session factory needed for hibernate transaction.
+
+6. entityManager.persist(emp) : Send object value into database. Similar to SQL - Insert into () values () statement. Argument should be object. Here object of Employee class.
+
+7.  entityManager.getTransaction().begin();
+    entityManager.getTransaction().commit(); --> Wrap entityManager.persist(obj) with transcation begin and commit.
+                                                 Statements required for every write operations in database. Option for read operation.
+
+

@@ -7,21 +7,15 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         
         <properties>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/emp_db" />
             <property name="javax.persistence.jdbc.user" value="root" />
             <property name="javax.persistence.jdbc.password" value="root" />
-            <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"/>
-            <property name="show_sql" value="true"/>
+            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"/>-->
+            <property name="hibernate.show_sql" value="true" />
 
-            <property name="hibernate.hbm2ddl.auto" value="create"></property>
+            <property name="hibernate.hbm2ddl.auto" value="validate"></property>
 
-<!--            <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://MERIDIAN-105\SQLEXPRESS:1433;DatabaseName=JPAExample"/>
-            <property name="javax.persistence.jdbc.user" value="MERIDIAN-105\SBhat"/>
-            <property name="javax.persistence.jdbc.password" value=""/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"/>
-            <property name="hibernate.show_sql" value="true"/>-->
 
         </properties>
         
