@@ -1,5 +1,7 @@
 package JPA;
 
+import JPA.Entity.Employee;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -10,10 +12,10 @@ public class Runner {
 
     public static void main(String[] args) {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("jpa-example");
-
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
 
 //INSERT Query
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
 
 /*        Employee emp = new Employee();
         emp.setFirstName("Sagar");
@@ -68,10 +70,8 @@ public class Runner {
         List<Employee> resultEmail = queryByEmail.getResultList();
 
         for (Employee emp : resultEmail) {
-            System.out.println("Result ----- "+ emp);
+            System.out.println("Result ----- " + emp);
         }
-
-
 
         entityManager.close();
         entityManagerFactory.close();

@@ -1,4 +1,4 @@
-package JPA;
+package JPA.Entity;
 
 import javax.persistence.*;
 import java.util.UUID;
